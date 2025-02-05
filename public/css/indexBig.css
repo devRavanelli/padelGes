@@ -1,0 +1,81 @@
+@media (min-width: 1364px) {
+
+    .overlay-section {
+        min-height: 90vh;
+    }
+
+    .overlay-section h1 {
+        margin-top: 100px;
+        font-size: 60px;
+    }
+
+    .overlay-section * {
+        max-width: 40%;
+    }
+
+    .overlay-section p:nth-of-type(2) {
+        margin-bottom: 50px;
+    }
+
+    .main-video {
+        height: 550px;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+
+    .seccion-portada {
+        flex-direction: row;
+        justify-content: center;
+        height: 75vh;
+        padding-bottom: 150px;
+        padding-top: 120px;
+    }
+
+    .seccion-portada p,
+    .seccion-portada h1 {
+        margin: 0;
+        width: 25%;
+        margin-bottom: 50px;
+        text-align: left;
+        margin-top: -150px;
+    }
+
+    .seccion-portada h1 {
+        margin-top: -180px;
+        line-height: 1;
+        font-size: 70px;
+    }
+
+    .popup-content {
+        width: 500px; /* Más ancho */
+        max-width: 550px; /* Límite máximo de ancho */
+        padding: 20px; /* Espaciado interno moderado */
+        font-size: 0.8em; /* Tamaño de fuente estándar */
+        height: auto; /* Asegurarse de que la altura se ajuste al contenido */
+        max-height: 600px; /* Límite máximo de altura */
+    }
+
+    .popup-content h3 {
+        font-size: 1.1em; /* Título más pequeño para ajustar la altura */
+        margin-bottom: 15px; /* Menor espacio debajo del título */
+    }
+
+    .popup-content input,
+    .popup-content textarea {
+        padding: 8px; /* Espaciado interno reducido */
+        font-size: 0.8em; /* Texto ajustado */
+        margin-bottom: 10px; /* Menor espacio entre elementos */
+    }
+
+    .popup-content textarea {
+        height: 80px; /* Limitar altura de textarea */
+    }
+
+    .form-buttons button {
+        padding: 8px 15px; /* Botones más pequeños */
+        font-size: 0.9em; /* Texto más pequeño */
+    }
+
+}

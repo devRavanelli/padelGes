@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("../assets/images/fondo2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f5f5f5;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    flex-wrap: wrap;
+}
+
+.header h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    margin-left: 130px;
+}
+
+header h1 i {
+    margin-right: 10px;
+}
+
+.header .logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header button {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.header button:hover {
+    background-color: #ccc;
+}
+
+
+.main-container {
+    display: flex;
+    flex: 1;
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Sidebar (Menú Lateral) */
+.sidebar {
+    color: #fff;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 15;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(26, 25, 25, 0.7));
+
+    max-width: 100%;
+    align-items:center;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.sidebar i {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    color: #1abc9c;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.search-form {
+    width: 100%;
+}
+
+.content section {
+    margin-bottom: 20px;
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+#date-time {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 16px;
+    color: #333;
+
+}
+
+.user-info a {
+    text-decoration: none;
+}
+
+.user-info a {
+    background-color: #1abc9c;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+}
+
+.user-info a:hover {
+    background-color: #1c977f;
+}
+
+.user-info i {
+    margin-left: 5px;
+}
+
+.table-container {
+    max-height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para las celdas de la tabla */
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    position: sticky;
+    /* Hace que los encabezados sean fijos */
+    top: 0;
+    border-top: none;
+}
+
+td {
+    background-color: rgba(242, 242, 242, 0.5);
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+table th {
+    pointer-events: none;
+    /* Desactiva el efecto hover sobre las celdas <th> */
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+#searchForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 250px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #007bff;
+    /* Cambia el color al hacer foco */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+#searchForm button,
+a.mostrar-usuarios {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    /* Elimina el subrayado en el enlace */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+
+}
+
+
+
+#searchForm button i,
+a.mostrar-usuarios i {
+    margin-right: 10px;
+}
+
+#searchForm button:hover,
+a.mostrar-usuarios:hover {
+    background-color: #0056b3;
+}
+
+.btn-añadir-usuario {
+    display: flex;
+    gap: 10px;
+}
+
+/* Mostrar 'A' para activar y 'D' para desactivar */
+.estado-btn.activar::after {
+    content: 'Activar';
+    /* Mostrar 'A' para activar */
+}
+
+.estado-btn.desactivar::after {
+    content: 'Desactivar';
+    /* Mostrar 'D' para desactivar */
+}
+
+/* Personalización de la barra de desplazamiento para WebKit (Chrome, Safari, Edge) */
+.table-container::-webkit-scrollbar {
+    width: 8px;
+    /* Ancho de la barra de desplazamiento vertical */
+    height: 8px;
+    /* Altura de la barra de desplazamiento horizontal */
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    /* Color del fondo del track (rastro) */
+    border-radius: 4px;
+    /* Bordes redondeados para el track */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    /* Color de la barra de desplazamiento */
+    border-radius: 4px;
+    /* Bordes redondeados para el thumb (barra) */
+    border: 2px solid #e0e0e0;
+    /* Bordes para crear espacio alrededor del thumb */
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3;
+    /* Color cuando el usuario pasa el cursor sobre la barra */
+}
+
+/* Personalización de la barra de desplazamiento para Firefox */
+.table-container {
+    scrollbar-width: thin;
+    /* Define el grosor de la barra de desplazamiento (thin, auto, or none) */
+    scrollbar-color: #000000 #e0e0e0;
+    /* Primero el color del thumb, luego el color de la pista */
+}
+
+/* Clase para el botón de desactivación */
+.estado-btn {
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 120px;
+    /* Ancho fijo para ambos botones */
+    text-align: center;
+    /* Asegura que el texto esté centrado */
+}
+
+/* Clase para el botón de desactivar */
+.estado-btn.desactivar {
+    background-color: #dc3545;
+    /* Rojo para desactivar */
+}
+
+/* Clase para el botón de activar */
+.estado-btn.activar {
+    background-color: #28a745;
+    /* Verde para activar */
+}
+
+/* Hover para el botón de desactivar */
+.estado-btn.desactivar:hover {
+    background-color: #c82333;
+    /* Rojo más oscuro en hover */
+}
+
+/* Hover para el botón de activar */
+.estado-btn.activar:hover {
+    background-color: #218838;
+    /* Verde más oscuro en hover */
+}
+
+.botones-inf-container {
+    margin: 0 auto;
+    margin-top: 15px;
+    display: block;
+    /* Asegurarse de que esté en una línea nueva */
+    width: 80%;
+}
+
+.nuevo-usuario {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.nuevo-usuario i {
+    margin-left: 10px;
+}
+
+.nuevo-usuario:hover {
+    background-color: #0056b3;
+}
+
+#modificar-usuario-msg {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: 160px;
+    margin-bottom: 10px;
+}
+
+.logo-container {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Mensaje de error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.botones-inferiores {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre el botón y la paginación */
+    align-items: center; /* Alinea verticalmente */
+    flex-wrap: wrap; /* Evita que se desborde en pantallas pequeñas */
+    width: 100%;
+}
+
+.btn-añadir-usuario {
+    flex-shrink: 0; /* Evita que el botón se reduzca demasiado */
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.pagination a,
+.pagination span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: white;
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+
+}
+
+.pagination .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.sidebar a.active {
+    color: #1c977f;
+}
+
+
+/* Estilos Responsivos */
+@media (max-width: 1250px) {
+    .main-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Sidebar oculto inicialmente en móviles */
+    .sidebar {
+        width: 250px;
+        /* Ancho fijo */
+        max-width: 200px;
+        height: 100vh;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        transition: 0.3s ease;
+        margin-top: 50px;
+        padding: 20px;
+
+    }
+
+    .sidebar ul {
+        list-style: none;
+        display: block;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .header h1 {
+        font-size: 12px;
+        margin-left: auto;
+    }
+
+    .header .user-info {
+        font-size: 11px;
+    }
+
+    /* Botón de menú para móviles */
+    .menu-toggle {
+        font-size: 24px;
+        cursor: pointer;
+        display: block;
+        color: #fff;
+        background: none;
+        border: none;
+    }
+
+    #date-time {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 4px;
+    }
+
+    th {
+        border-top: none;
+    }
+
+    .ocultar-movil {
+        display: none;
+    }
+
+    #searchInput,
+    #searchForm button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #searchForm {
+        flex-direction: column;
+    }
+
+    .table-container {
+        max-height: 50vh;
+        overflow-y: auto;
+        overflow-x: auto;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    table {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .botones-inf-container {
+        width: 100%;
+    }
+
+    #searchForm button,
+    a.mostrar-usuarios {
+        width: 100%;
+    }
+
+    #modificar-usuario-msg {
+        font-size: 12px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        margin-left: 0px;
+    }
+
+    .estado-btn {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 30px;
+    }
+
+    .estado-btn span {
+        display: inline-block;
+    }
+
+    .estado-btn.activar span {
+        display: none;
+    }
+
+    .estado-btn.desactivar span {
+        display: none;
+    }
+
+    /* Mostrar 'A' para activar y 'D' para desactivar */
+    .estado-btn.activar::after {
+        content: 'A';
+        /* Mostrar 'A' para activar */
+    }
+
+    .estado-btn.desactivar::after {
+        content: 'D';
+        /* Mostrar 'D' para desactivar */
+    }
+
+
+}

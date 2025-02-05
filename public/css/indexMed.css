@@ -1,0 +1,142 @@
+@media (min-width: 768px) {
+
+    header {
+        padding: 0px 20px;
+        background-color: #2f3030;
+        position: fixed;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+        max-height: none;
+        justify-content: center;
+        box-shadow: none;
+        position: static;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 10px;
+        border-bottom: none;
+    }
+
+    .nav-links li:hover {
+        background-color: transparent;
+    }
+
+    .user-info {
+        margin-right: 0;
+        margin-left: -15px;
+    }
+
+
+    .nav-links a {
+        color: #ffffff;
+        font-size: 16px;
+        width: auto;
+        justify-content: center;
+        position: relative;
+        font-size: 1.2rem;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -10px;
+        background-color: #ffcc00;
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .nav-links li a:hover {
+        color: #1abc9c;
+    }
+
+    .nav-links img {
+        margin-right: 5px;
+        width: 20px;
+    }
+
+    header button {
+        width: 100px;
+    }
+
+    .club-imagen {
+        width: 300px;
+        margin-top: 20px;
+    }
+
+    .nav-links a img {
+        display: none;
+    }
+
+    .contacto-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; /* Opcional: distribuye mejor los elementos */
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer-container > p:nth-last-child(1) {
+        align-self: stretch; /* Para que ocupe todo el ancho */
+    }
+
+    .overlay-section p {
+        max-width: 50%;
+
+    }
+
+    .overlay-section h1 {
+        margin-top: 80px;
+
+    }
+
+    .main-video {
+        height: 400px;
+    }
+
+    .slider-item {
+        font-size: 16px;
+    }
+
+    .contacto-container {
+        flex-direction: row;
+    }
+
+    .contenedor-seccion-cifras {
+        display: flex;
+        gap: 150px;
+    }
+
+    .popup-content {
+        width: 550px;
+        padding: 30px;
+    }
+
+}

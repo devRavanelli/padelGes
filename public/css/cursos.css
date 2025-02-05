@@ -1,0 +1,52 @@
+/* Estilo para la sección de instructores */
+
+.instructores-section {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: -160px;
+    margin-bottom: -120px;
+}
+
+.instructores-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.instructores-section h2 {
+    margin-bottom: 20px;
+    margin-top: 120px;
+    width: 100%;
+}
+
+.instructor {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.instructor img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.instructor h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.instructor p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+}
+
+

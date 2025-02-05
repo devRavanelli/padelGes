@@ -1,0 +1,133 @@
+/* Contenedor de los botones */
+.form-buttons {
+    display: flex;
+    /* Usamos flexbox para alinear los botones */
+    gap: 10px;
+    /* Espaciado entre los botones */
+    justify-content: center;
+    /* Centra los botones dentro del contenedor */
+    width: 100%;
+    /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+}
+
+/* Estilo para los botones Editar y Eliminar */
+.btn-editar,
+.btn-eliminar {
+
+    background-color: #f39c12;
+    /* Color de fondo para el botón Editar */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    padding: 10px;
+    /* Espaciado interno */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    text-decoration: none;
+    /* Eliminar subrayado en enlaces */
+    transition: background-color 0.3s ease;
+    /* Transición suave al pasar el mouse */
+    text-align: center;
+    /* Asegura que el texto esté centrado */
+    min-width: 0;
+    /* Evita que el contenido se desborde */
+}
+
+/* Estilo para el botón Editar */
+.btn-editar {
+    background-color: #f39c12;
+    /* Amarillo */
+}
+
+.btn-editar:hover {
+    background-color: #e67e22;
+    /* Tono más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón Eliminar */
+.btn-eliminar {
+    background-color: #e74c3c;
+    /* Rojo */
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+    /* Rojo oscuro al pasar el mouse */
+}
+
+
+#id_franja,
+.pistaSelect,
+.fechaInput,
+#id_usuario {
+    padding: 10px 15px;
+    margin-top: 2px;
+}
+
+.crear-reserva {
+    max-width: 400px;
+    /* Ancho máximo para evitar que se extienda demasiado */
+    width: 100%;
+    margin: 0 auto;
+    /* Centrar el formulario */
+    padding: 20px;
+    background: #f9f9f9;
+    /* Fondo claro para destacar el formulario */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+}
+
+/* Estilos generales de los inputs y selects */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.btn-crear {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 100%;
+}
+
+.cancelar {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #dc3545;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.mostrar-columna{
+    display: none;
+}
+
+@media (min-width: 1200px)  {
+    .mostrar-columna{
+        display: table-cell;
+    }
+
+    .columna-num-reserva::after{
+        content: " reserva";
+    }
+}

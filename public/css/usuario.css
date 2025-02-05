@@ -1,0 +1,124 @@
+/* Contenedor para la tabla */
+
+main{
+
+        margin-bottom: 30vh;
+}
+#reservas-container {
+    width: 95%;
+    margin: 0 auto; /* Centra el contenedor */
+    box-sizing: border-box; /* Para que los márgenes y el padding no sumen al ancho total */
+}
+
+/* Estilo para la tabla de reservas */
+.reservations-table {
+    width: 100%;
+    max-width: 600px; /* Limita el ancho máximo de la tabla */
+    margin: 20px auto; /* Centra la tabla y agrega márgenes superiores e inferiores */
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que el borde redondeado funcione correctamente */
+    word-wrap: break-word; /* Evita que el contenido se desborde */
+    box-sizing: border-box; /* Para incluir el padding dentro del tamaño total */
+}
+
+/* Estilo para las cabeceras */
+.reservations-table thead {
+    background-color: #333333;
+    color: white;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+tbody{
+    font-size: 13px;
+}
+
+.reservations-table th {
+    padding: 12px 15px;
+}
+
+/* Estilo para las celdas de la tabla */
+.reservations-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilo para las filas */
+.reservations-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.reservations-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para la tabla cuando no hay datos */
+.reservations-table tbody tr.no-data {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+/* Asegurarse de que las celdas no se desborden en pantallas pequeñas */
+.reservations-table td {
+    word-wrap: break-word;
+}
+
+/* Opcional: para que la tabla no se vea tan apretada en pantallas pequeñas */
+.reservations-table th, .reservations-table td {
+    padding: 10px;
+}
+
+.reservations-table th:nth-child(5),
+.reservations-table td:nth-child(5) {
+    display: none;
+}
+
+#mis-reservas{
+    margin-top: 20px;
+}
+
+.btn-cancelar {
+    background-color: #f44336; /* Rojo brillante para indicar cancelación */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 5px 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Muestra el cursor como mano al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efectos suaves para el hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.btn-cancelar:hover {
+    background-color: #e53935; /* Rojo más oscuro cuando el usuario pasa el cursor */
+    transform: scale(1.05); /* Agrandar ligeramente al pasar el ratón */
+}
+
+.btn-cancelar:active {
+    background-color: #d32f2f; /* Rojo más oscuro cuando se hace clic */
+    transform: scale(0.98); /* Efecto de reducción al presionar */
+}
+
+.btn-cancelar:focus {
+    outline: none; /* Remueve el borde por defecto en el enfoque */
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.5); /* Sombra para indicar enfoque */
+}
+main{
+    margin-bottom: 25vh;
+}
+
+/* Mostrar la columna "Nombre Pista" en pantallas más grandes (mayores a 600px) */
+@media (min-width: 600px) {
+    .reservations-table th:nth-child(5),
+    .reservations-table td:nth-child(5) {
+        display: table-cell;
+    }
+
+    main{
+        margin-bottom: 35vh;
+    }
+}

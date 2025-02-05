@@ -1,0 +1,889 @@
+/* Mobile First: Estilos base para móviles */
+
+/* Paleta de colores */
+:root {
+    /* Colores generales */
+    --color-dark: #333333;
+    /* Color oscuro */
+    --color-light: #f4f4f4;
+    /* Color claro */
+    --color-white: #ffffff;
+    /* Blanco */
+
+    /* Colores para texto */
+    --color-text: #ffffff;
+    /* Texto blanco */
+    --color-accent: #1abc9c;
+    /* Color de acento */
+
+    /* Colores para botones */
+    --color-button-bg: #1abc9c;
+    /* Fondo de botones */
+    --color-button-hover: #137a66;
+    /* Fondo de botones al pasar el cursor */
+
+    /* Colores adicionales (si es necesario) */
+    --color-active-link: #ff5733;
+    /* Color para enlaces activos */
+    --color-navbar-bg: var(--color-dark);
+    /* Fondo del navbar */
+    --color-hover: #b8b8b8;
+    /* Color de hover general */
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background-image {
+    position: fixed;
+    /* Fija la imagen al viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Ocupa toda la pantalla */
+    background-color: #333;
+    background-image: url("../assets/images/fondo2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    /* Asegura que está detrás del contenido */
+}
+
+img {
+    object-fit: cover;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    /* Ajusta este valor según la altura de tu encabezado */
+    z-index: 1000;
+    background-color: #333;
+    /* Agrega un color de fondo para hacerlo visible sobre el contenido */
+    color: white;
+    padding: 0 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Agrega sombra para mayor visibilidad */
+    transition: padding 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* Espacio entre los elementos */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ícono hamburguesa */
+.hamburger {
+    display: block;
+    cursor: pointer;
+    margin-right: 5px;
+    /* Espacio entre la hamburguesa y el logo */
+    margin-left: -10px;
+}
+
+.hamburger-icon {
+    font-size: 35px;
+    /* Tamaño del símbolo ☰ */
+    color: white;
+    /* Color negro para el icono */
+    font-weight: bold;
+    /* Asegura que se vea más destacado */
+    display: block;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    /* Asegura que el logo se alinee verticalmente con el burger */
+}
+
+.logo img {
+    width: 60px;
+    /* Tamaño reducido del logo */
+}
+
+.club-imagen {
+    width: 200px;
+    margin-left: 20px;
+}
+
+/* Usuario y Logout */
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Alinea el contenido a la derecha */
+    margin-left: auto;
+    /* Asegura que 'user-info' se mueva al extremo derecho */
+    margin-right: -15px;
+
+}
+
+.user-info span {
+    margin-right: 10px;
+    margin-left: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+.user-info a {
+    text-decoration: none;
+}
+
+.user-info a, .user-info button {
+    background-color: #1abc9c;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+}
+
+.user-info a.logout {
+    background-color: #e74c3c; /* Color diferente para logout */
+    color: white;
+}
+
+.user-info a.logout:hover {
+    background-color: #c0392b; /* Color de hover para logout */
+}
+
+
+.user-info i {
+    margin-left: 5px;
+}
+
+.user-info a:hover {
+    background-color: #137a66;
+}
+
+/* Ocultar el menú por defecto en móviles */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    position: absolute;
+    top: 110px;
+    right: 0;
+    background-color: #333;
+    width: calc(100% - 20px);
+    text-align: center;
+    transition: max-height 0.5s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links li {
+    padding: 15px 0;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li:hover {
+    background-color: #b8b8b8;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 150px;
+    font-weight: 700;
+}
+
+.active-link {
+    color: #ff5733;
+    font-weight: bold;
+}
+
+.nav-links img {
+    width: 25px;
+    margin-right: 20px;
+}
+
+/* Mostrar el menú cuando se activa el ícono hamburguesa */
+.nav-active {
+    max-height: 300px;
+    margin-top: -15px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    transition: margin-top 0.5s ease;
+    border-top: 1px solid #333;
+    text-align: center;
+    padding-bottom: 50px;
+    flex: 1;
+}
+
+main h3 {
+
+    color: white;
+    text-shadow: 2px 2px 4px black, -2px -2px 4px black, 2px -2px 4px black, -2px 2px 4px black;
+    font-size: 40px;
+    margin-top: -30px;
+    font-weight: 900;
+}
+
+section h3 {
+    text-align: start;
+}
+
+footer {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0px;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+    margin-top: 20px;
+}
+
+
+footer>p:nth-last-child(1) {
+    padding: 10px;
+    background-color: #333333;
+    margin-bottom: 0px;
+    width: 100%;
+    color: #f4f4f4;
+}
+
+.footer-logo {
+    width: 150px;
+    opacity: 0.6;
+}
+
+.footer-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+}
+
+.footer-div p {
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-container {
+    display: flex;
+    flex-direction: column;
+}
+
+footer a {
+    text-decoration: none;
+    /* Sin subrayado */
+    color: #1b1717;
+    /* Color de texto inicial, gris claro */
+    font-weight: 800;
+    /* Negrita moderada */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    transition: all 0.3s ease;
+    /* Suavidad en los efectos */
+    background-color: transparent;
+    /* Fondo transparente inicialmente */
+}
+
+footer a:hover {
+    background-color: #4caf50;
+    /* Verde moderno para el fondo al pasar el mouse */
+    color: #ffffff;
+    /* Blanco para el texto al hacer hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra para dar profundidad */
+    transform: scale(1.05);
+    /* Ligeramente más grande */
+}
+
+footer a:active {
+    transform: scale(0.95);
+    /* Efecto de pulsación */
+    box-shadow: none;
+    /* Sin sombra al presionar */
+}
+
+
+@keyframes vibrate {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(2px, -2px);
+    }
+
+    60% {
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.vibrate {
+    animation: vibrate 0.3s linear;
+}
+
+.overlay-section {
+    margin-top: 20px;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    z-index: 1;
+    /* Borde superior más bajo y borde inferior más alto */
+}
+
+.overlay-section h1 {
+    margin-top: 120px;
+    font-size: 50px;
+    color: white;
+}
+
+.overlay-section p:nth-of-type(2) {
+    margin-bottom: 170px;
+    font-size: 18px;
+    margin-top: 20px;
+    color: white;
+}
+
+.overlay-section p:nth-of-type(1) {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #1abc9c;
+    font-weight: bold;
+}
+
+hr {
+    width: 50px;
+    height: 5px;
+    background: rgb(255, 255, 255);
+}
+
+.extra-content {
+    width: 100vw;
+    min-height: 50vh;
+    /* Ajusta según el contenido */
+    padding: 2rem;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    /* Clip-path modificado: parte superior recta */
+    margin-top: -160px;
+    /* Alinea perfectamente las formas */
+}
+
+.extra-content h2 {
+    margin-top: 160px;
+    font-size: 40px;
+    color: #333;
+}
+
+.reasons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 20px;
+    max-width: 1400px;
+    width: 95%;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 390px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.flip-card-front {
+    background-color: #ffffff;
+}
+
+.flip-card-front p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    font-style: normal;
+}
+
+.flip-card-back {
+    background-color: #333;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    border: 1px solid #1abc9c;
+}
+
+.flip-card-back h4 {
+    color: #1abc9c;
+    margin-bottom: 10px;
+}
+
+.icon img {
+    width: 200px;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.unase-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+
+.unase-contenedor p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px black, -2px -2px 4px black, 2px -2px 4px black, -2px 2px 4px black;
+}
+
+.unase-contenedor button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    color: #000000;
+    background-color: #ffffff;
+    font-family: "Roboto", Sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    border: none;
+    border-radius: 50px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+    transition: all 0.3s ease;
+    /* Transición suave para los efectos */
+}
+
+.unase-contenedor button:hover {
+    background-color: #1abc9c;
+    /* Color de fondo al pasar el ratón */
+    color: #fff;
+    transform: translateY(-3px);
+    /* Efecto de desplazamiento hacia arriba */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Sombra más intensa en hover */
+}
+
+.unase-contenedor button:active {
+    transform: translateY(1px);
+    /* Efecto de hundimiento al hacer clic */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra más pequeña al hacer clic */
+}
+
+.main-video {
+    width: 100%;
+    /* El video ocupa todo el ancho */
+    height: 200px;
+    /* Ajusta la altura según tus necesidades */
+    object-fit: cover;
+    /* Ajusta el video para cubrir el espacio sin deformarse */
+    display: block;
+    /* Elimina cualquier espacio extraño (como inline-spacing) */
+}
+
+/* Contenedor de Noticias */
+.noticias-container {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+    /* Oculta las noticias que están fuera de la vista */
+}
+
+/* Sección de título con corte diagonal al revés */
+.noticias-titulo {
+    background-color: #1abc9c;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 35px;
+    margin-left: -25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+}
+
+.noticias-titulo span {
+    margin-left: 10px;
+}
+
+/* Slider de Noticias */
+.noticias-slider {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Solo muestra una noticia a la vez */
+}
+
+/* Contenedor de las noticias */
+.slider-items {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    /* Transición suave */
+    width: 300%;
+    /* Aseguramos que el contenedor tiene el espacio suficiente para las 3 noticias */
+    align-items: flex-start;
+    /* Alinea las noticias a la parte superior */
+}
+
+/* Cada noticia ocupa el 100% del contenedor visible */
+.slider-item {
+    display: inline-block;
+    width: 100vw;
+    /* Cada noticia ocupa el 100% del ancho de la ventana */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total */
+    padding: 0 20px;
+    /* Ajusta el padding si es necesario */
+    text-align: left;
+    /* Alinea el texto de las noticias a la izquierda */
+    font-size: 12px;
+}
+
+/* Contenedor de los botones */
+.slider-buttons {
+    position: absolute;
+    right: 10px;
+    /* Las flechas se colocan en el lado derecho */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centrado vertical */
+    display: flex;
+    gap: 10px;
+    /* Espacio entre las flechas */
+    z-index: 20;
+    /* Asegura que las flechas estén encima del contenido */
+}
+
+/* Botones del slider */
+.slider-prev,
+.slider-next {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #007bff;
+}
+
+/* Efecto hover para las flechas */
+.slider-prev:hover,
+.slider-next:hover {
+    color: #0056b3;
+}
+
+
+.seccion-portada {
+    background-color: #333333;
+    background-image: url(../assets/images/skyline.png);
+    background-size: 100% auto;
+    background-position: center 80%;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    height: 95vh;
+}
+
+
+
+
+.seccion-portada h1 {
+    margin-top: 20px;
+    color: white;
+    font-size: 50px;
+
+}
+
+.seccion-portada p {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #d4d4d4;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+.seccion-cifras {
+    background-color: white;
+    width: 100%;
+    min-height: 50vh;
+    margin-top: -160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 120px;
+    margin-bottom: -150px;
+}
+
+.seccion-cifras img {
+    width: 150px;
+    background-color: #a9aeb3;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.seccion-cifras h1 {
+    margin-top: 150px;
+    font-size: 50px;
+    color: #1abc9c;
+}
+
+.contenedor-cifras {
+    margin-top: 20px;
+}
+
+.seccion-cifras hr {
+    background-color: #1e84f1;
+    margin-bottom: 20px;
+}
+
+.seccion-cifras p {
+    font-size: 20px;
+    color: #1e84f1;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.total-usuarios {
+    font-size: 40px;
+    color: #1abc9c;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 90%;
+    /* Cambia de un valor fijo a un porcentaje */
+    max-width: 320px;
+    /* Asegura que no sea demasiado ancho */
+    text-align: left;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: popup-entrance 0.3s ease-out;
+}
+
+.popup-content h3 {
+    font-size: 1em;
+    /* Reduce el tamaño */
+    margin-bottom: 15px;
+    margin-top: 8px;
+    color: #333;
+    text-align: center;
+    text-shadow: none;
+}
+
+.popup-content label {
+    display: block;
+    margin-bottom: 6px;
+    /* Reduce el margen */
+    font-weight: bold;
+    color: #555;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    padding: 8px;
+    /* Reduce el padding */
+    margin-bottom: 10px;
+    /* Reduce el margen */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9em;
+    /* Reduce el tamaño de fuente */
+    box-sizing: border-box;
+}
+
+.popup-content textarea {
+    resize: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+    /* Reduce el espacio entre botones */
+}
+
+.form-buttons button {
+    padding: 8px 15px;
+    /* Reduce el tamaño */
+    font-size: 0.9em;
+    /* Reduce el tamaño de fuente */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.form-buttons button[type="button"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+.form-buttons button[type="button"]:hover {
+    background-color: #c82333;
+}
+
+@keyframes popup-entrance {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

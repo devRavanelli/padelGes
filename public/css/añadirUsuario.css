@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+#añadirUsuario {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Jost", sans-serif;
+    width: 100%;
+}
+
+#addUserForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#addUserForm input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#addUserForm input:focus {
+    border-color: #28a745;
+    outline: none;
+    background-color: #e7f5e9;
+}
+
+#addUserForm select:focus {
+    border-color: #28a745;
+    outline: none;
+    background-color: #e7f5e9;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between; /* Distribuye los campos */
+    gap: 20px; /* Espacio entre los campos */
+    margin: 10px 0;
+}
+
+.rol, .nivel {
+    width: 48%; /* Ajustamos el ancho para que ocupen el 48% del espacio disponible */
+}
+
+.rol, .nivel {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    justify-content: start;
+}
+
+.rol label, .nivel label {
+    margin-right: 10px;
+}
+
+#addUserForm select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 40%;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#addUserForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#addUserForm button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+#addUserForm button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+#cancelar {
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+}
+
+#cancelar:hover {
+    background-color: #c82333;
+}
+
+#cancelar:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+.input-error {
+    border-color: red;
+    background-color: #f8d7da;
+}
+
+#error-msg {
+    color: red;
+}
+
+/* Estilo para el borde rojo (error) */
+.error {
+    border: 2px solid red;
+}
+
+/* Estilo para el borde verde (válido) */
+.valid {
+    border: 2px solid green;
+}
+
+input.error {
+    border-color: red; /* Borde rojo si hay error */
+}
+
+input.valid {
+    border-color: green; /* Borde verde si es válido */
+}
+
+
+@media (min-width: 1025px) {
+    #añadirUsuario {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+
+    .rol {
+        margin-top: 10px;
+    }
+
+    .botones {
+        flex-direction: row;
+    }
+
+    .botones button {
+        width: 146px;
+    }
+}
