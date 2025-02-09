@@ -4,6 +4,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     // Obtener valores de usuario (DNI) y contraseña
     const dni = document.getElementById("dni").value;
     const password = document.getElementById("password").value;
+    const loginUrl = document.getElementById('loginForm').action;
 
     if (!validarDNI(dni)) {
         Swal.fire({
