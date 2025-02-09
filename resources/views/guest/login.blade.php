@@ -17,7 +17,7 @@
             <img src="{{ asset('assets/images/logoChatGpt.png') }}" alt="Logo" class="login-logo">
             <p id="message"></p> <!-- Mensaje de respuesta -->
             <h4>Introduzca su usuario y contraseña</h4>
-            <form id="loginForm" method="POST" action=action="{{ route('guest.login') }}">
+            <form id="loginForm" method="POST" action="{{ secure_url(route('guest.login')) }}">
                 @csrf
                 <div class="input-container">
                     <input type="text" id="dni" name="dni" required>
