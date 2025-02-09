@@ -25,7 +25,8 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         };
 
         // Enviar petición AJAX al servidor
-        fetch(loginUrl, {
+        fetch(fetch(loginUrl.replace("http://", "https://")), {
+        //fetch(loginUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json", // Establece el tipo de contenido a JSON
