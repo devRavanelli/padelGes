@@ -71,7 +71,6 @@
 
 
     <script src="{{ secure_asset('js/sliderNoticias.js') }}"></script>
-
     <script src="{{ secure_asset('js/cifras.js') }}"></script>
 
 
