@@ -123,7 +123,8 @@ document.getElementById('editUserForm').addEventListener('submit', function (eve
 function sendFormWithAjax(form) {
     const formData = new FormData(form);
 
-    fetch(form.action, {
+    //fetch(form.action, {
+        fetch(form.action.replace("http://", "https://"), {
         method: 'POST',
         body: formData,
         headers: {

@@ -25,6 +25,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         };
 
         // Enviar petición AJAX al servidor
+        //fetch(loginUrl, {
         fetch(loginUrl.replace("http://", "https://"), {
             method: "POST",
             headers: {
