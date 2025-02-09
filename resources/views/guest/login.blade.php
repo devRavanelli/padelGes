@@ -41,5 +41,6 @@
 
 </html>
 <script>
-    var loginUrl = "{{ route('guest.login') }}"; // Genera la URL con Blade
+   // var loginUrl = "{{ route('guest.login') }}"; // Genera la URL con Blade
+    var loginUrl = "{{ secure_url(route('guest.login')) }}";
 </script>
