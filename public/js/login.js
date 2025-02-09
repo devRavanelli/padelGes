@@ -18,7 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 
         });
     } else {
-        // Crear un objeto con los datos para enviar
+        // Crear un objeto con los datos para enviar pakito
         const formData = {
             dni: dni,
             password: password
