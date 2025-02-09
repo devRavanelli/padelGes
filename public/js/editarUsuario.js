@@ -145,7 +145,8 @@ function sendFormWithAjax(form) {
                 text: 'Usuario actualizado correctamente',
                 confirmButtonText: 'Aceptar'
             }).then(() => {
-                window.location.href = "http://127.0.0.1:8000/admin/usuarios/mostrar"; // Redirige a la lista de usuarios
+                window.location.href = //"https://127.0.0.1:8000/admin/usuarios/mostrar"; // Redirige a la lista de usuarios
+                "https://padelges-production.up.railway.app/admin/usuarios/mostrar";
             });
         } else {
             Swal.fire({

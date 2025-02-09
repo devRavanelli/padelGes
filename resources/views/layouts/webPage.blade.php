@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/indexMed.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/indexBig.css') }}" type="text/css">
-    <link rel="icon" href="{{ asset('assets/logoChatGpt.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('assets/images/logoChatGpt.png') }}" type="image/png">
     @yield('styles') <!-- Para CSS específicos de cada vista -->
 </head>
 
