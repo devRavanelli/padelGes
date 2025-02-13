@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>PRV - Pádel Resort Valencia</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}" type="text/css">
-    <link rel="icon" href="./assets/images/logoChatGpt.png" type="image/x-icon">
+
 </head>
 
 <body>

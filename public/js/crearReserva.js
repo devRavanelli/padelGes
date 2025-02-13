@@ -18,7 +18,7 @@
             var formData = new FormData(form); // Creamos los datos del formulario
 
             // Enviamos la solicitud AJAX
-            fetch(form.action, {
+            fetch(form.action.replace("http://", "https://"), {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -36,7 +36,7 @@
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     }).then(() => {
-                        window.location.href = "http://127.0.0.1:8000/admin/reservas/mostrar";  // Redirigir a la lista de reservas
+                        window.location.href = "https://padelges-production.up.railway.app/admin/reservas/mostrar";  // Redirigir a la lista de reservas
                     });
                 } else {
                     Swal.fire({
@@ -60,7 +60,7 @@
 });
 
 document.getElementById('cancelar').addEventListener('click', function() {
-    window.location.href = "http://127.0.0.1:8000/admin/reservas/mostrar"; // Redirige a la ruta usuarios/mostrar
+    window.location.href = "https://padelges-production.up.railway.app/admin/reservas/mostrar"; // Redirige a la ruta usuarios/mostrar
 });
 
 $(document).ready(function() {

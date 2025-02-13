@@ -1,0 +1,192 @@
+.pistas-container {
+    display: flex;
+    flex-direction: column; /* Por defecto, en columna */
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.pistas-container a{
+text-decoration: none;
+color: #333;
+}
+
+.pistas-container h3{
+    margin-top: 10px;
+}
+
+.pista-card {
+
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    background: #f4f4f4;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover */
+.pista-card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    background-color: #e0e0e0; /* Cambio de color de fondo */
+}
+
+.pista-card img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.pista-detalle {
+    max-width: 600px;
+    margin: 70px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pista-titulo {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.pista-imagen-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pista-imagen {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pista-info h3 {
+    font-size: 20px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.pista-descripcion {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.pista-boton {
+    margin-top: 20px;
+}
+
+.btn-volver {
+    display: inline-block;
+    text-decoration: none;
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-volver:hover {
+    background: #0056b3;
+}
+
+.btn-editar {
+    display: inline-block;
+    text-decoration: none;
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-editar:hover {
+    background: #218838;
+}
+
+
+
+.pista-titulo {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #333;
+}
+
+textarea.form-control {
+    height: 150px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.pista-boton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+/* En pantallas grandes, cambiar a fila con wrap */
+@media (min-width: 768px) {
+    .pistas-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pista-card {
+
+    }
+
+    .pista-card img {
+        width: 400px;
+        height: 300px;
+    }
+}

@@ -12,7 +12,11 @@ class Pista extends Model
     protected $table = 'pistas'; // Nombre de la tabla
 
     protected $fillable = [
-        'nombre_pista', // Los campos que se pueden asignar masivamente
+        'nombre_pista',
+        'descripcion',
+        'tipo_pared',
+        'tipo_suelo',
+        'imagen',
     ];
 
     /**

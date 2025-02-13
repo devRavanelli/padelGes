@@ -1,6 +1,6 @@
 
 document.getElementById('cancelar').addEventListener('click', function() {
-    window.location.href = "http://127.0.0.1:8000/admin/usuarios/mostrar"; // Redirige a la ruta usuarios/mostrar
+    window.location.href = "https://padelges-production.up.railway.app/admin/usuarios/mostrar";; // Redirige a la ruta usuarios/mostrar
 });
 
 document.getElementById('addUserForm').addEventListener('submit', function (event) {
@@ -124,7 +124,7 @@ if (password !== passwordConfirmation) {
 function sendFormWithAjax(form) {
     const formData = new FormData(form);
 
-    fetch(form.action, {
+    fetch(form.action.replace("http://", "https://"), {
         method: 'POST',
         body: formData,
         headers: {

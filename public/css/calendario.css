@@ -1,0 +1,127 @@
+/* Contenedor principal del calendario */
+.calendario-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+.calendario-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Estilo para el input de fecha */
+#fechaSeleccionada {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Estilo para el botón */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Contenedor para los horarios disponibles */
+#horariosDisponibles {
+    display: flex;
+    flex-wrap: wrap;
+    /* Para que se ajusten si hay muchos horarios */
+    gap: 10px;
+    /* Espaciado entre elementos */
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.hora-disponible {
+    display: flex;
+    align-items: center;
+    /* Alinear verticalmente */
+    gap: 10px;
+    /* Espaciado entre la hora y el botón */
+    background: #f8f9fa;
+    /* Fondo suave */
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.hora-disponible p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.reservar-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+main {
+    margin-bottom: 14vh;
+}
+
+.reservar-btn {
+    background-color: #007bff;
+    /* Azul brillante */
+    color: white;
+    /* Texto en blanco */
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reservar-btn:hover {
+    background-color: #0056b3;
+    /* Azul más oscuro */
+    transform: scale(1.05);
+    /* Efecto de crecimiento */
+}
+
+.reservar-btn:active {
+    background-color: #00408a;
+    /* Azul aún más oscuro */
+    transform: scale(0.95);
+    /* Efecto de pulsación */
+}
+
+
+
+
+@media (min-width: 1000px) {
+    main {
+        margin-bottom: 40vh;
+    }
+
+    #horariosDisponibles {
+        justify-content: start;
+    }
+}

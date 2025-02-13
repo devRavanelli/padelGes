@@ -9,7 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>@yield('title', 'Panel de Administrador')</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logoChatGpt.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/adminPanel.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
@@ -51,6 +50,11 @@
             <li>
                 <a id="link-reservas" href="{{ route('admin.reservas.mostrar') }}">
                     <i class="fas fa-calendar-check"></i> Reservas
+                </a>
+            </li>
+            <li>
+                <a id="link-pistas" href="{{ route('admin.pistas.mostrar') }}">
+                    <i class="fa fa-thumb-tack"></i> Pistas
                 </a>
             </li>
             <li>
