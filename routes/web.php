@@ -12,25 +12,25 @@ use App\Http\Controllers\PistasController;
 
 // Ruta para mostrar todos los usuarios en el panel de administración
 Route::get('/admin/usuarios/mostrar', [UsuariosController::class, 'index'])->name('admin.usuarios.mostrar')->middleware('auth');
-Route::get('/admin/usuarios/crear', [UsuariosController::class, 'create'])->name('admin.usuarios.crear')->middleware(['auth', 'is_admin']);
-Route::post('/admin/usuarios/crear', [UsuariosController::class, 'store'])->name('admin.usuarios.store')->middleware(['auth', 'is_admin']);
-Route::get('/admin/settings', [SettingsController::class, 'index'])->name('admin.settings')->middleware(['auth', 'is_admin']);
-Route::patch('/admin/usuarios/mostrar/{id}/toggle', [UsuariosController::class, 'toggleActivo'])->name('admin.usuarios.mostrar.toggle')->middleware(['auth', 'is_admin']);
-Route::get('/admin/usuarios/detalle/{id}', [UsuariosController::class, 'mostrarDetalle'])->name('admin.usuarios.detalle')->middleware(['auth', 'is_admin']);
-Route::get('/admin/usuarios/editar/{id}', [UsuariosController::class, 'editar'])->name('admin.usuarios.editar')->middleware(['auth', 'is_admin']); // Muestra el formulario de edición
-Route::put('/admin/usuarios/editar/{id}', [UsuariosController::class, 'actualizar'])->name('admin.usuarios.actualizar')->middleware(['auth', 'is_admin']); // Procesa la actualización
-Route::get('/admin/reservas/mostrar', [ReservasController::class, 'index'])->name('admin.reservas.mostrar')->middleware(['auth', 'is_admin']);
-Route::get('/admin/reservas/crear', [ReservasController::class, 'create'])->name('admin.reservas.crear')->middleware(['auth', 'is_admin']);
-Route::post('/admin/reservas/crear', [ReservasController::class, 'store'])->name('admin.reservas.store')->middleware(['auth', 'is_admin']);
-Route::get('admin/reservas/editar/{id}', [ReservasController::class, 'edit'])->name('admin.reservas.editar')->middleware(['auth', 'is_admin']);
-Route::put('/admin/reservas/editar/{id}', [ReservasController::class, 'actualizar'])->name('admin.reservas.actualizar')->middleware(['auth', 'is_admin']);
-Route::delete('admin/reservas/{id}', [ReservasController::class, 'destroy'])->name('admin.reservas.destroy')->middleware(['auth', 'is_admin']);
-Route::get('/admin/reservas/franjas-disponibles', [ReservasController::class, 'getFranjasDisponibles'])->name('admin.reservas.getFranjasDisponibles')->middleware(['auth', 'is_admin']);
+Route::get('/admin/usuarios/crear', [UsuariosController::class, 'create'])->name('admin.usuarios.crear')->middleware('auth');
+Route::post('/admin/usuarios/crear', [UsuariosController::class, 'store'])->name('admin.usuarios.store')->middleware('auth');
+Route::get('/admin/settings', [SettingsController::class, 'index'])->name('admin.settings')->middleware('auth');
+Route::patch('/admin/usuarios/mostrar/{id}/toggle', [UsuariosController::class, 'toggleActivo'])->name('admin.usuarios.mostrar.toggle')->middleware('auth');
+Route::get('/admin/usuarios/detalle/{id}', [UsuariosController::class, 'mostrarDetalle'])->name('admin.usuarios.detalle')->middleware('auth');
+Route::get('/admin/usuarios/editar/{id}', [UsuariosController::class, 'editar'])->name('admin.usuarios.editar')->middleware('auth'); // Muestra el formulario de edición
+Route::put('/admin/usuarios/editar/{id}', [UsuariosController::class, 'actualizar'])->name('admin.usuarios.actualizar')->middleware('auth'); // Procesa la actualización
+Route::get('/admin/reservas/mostrar', [ReservasController::class, 'index'])->name('admin.reservas.mostrar')->middleware('auth');
+Route::get('/admin/reservas/crear', [ReservasController::class, 'create'])->name('admin.reservas.crear')->middleware('auth');
+Route::post('/admin/reservas/crear', [ReservasController::class, 'store'])->name('admin.reservas.store')->middleware('auth');
+Route::get('admin/reservas/editar/{id}', [ReservasController::class, 'edit'])->name('admin.reservas.editar')->middleware('auth');
+Route::put('/admin/reservas/editar/{id}', [ReservasController::class, 'actualizar'])->name('admin.reservas.actualizar')->middleware('auth');
+Route::delete('admin/reservas/{id}', [ReservasController::class, 'destroy'])->name('admin.reservas.destroy')->middleware('auth');
+Route::get('/admin/reservas/franjas-disponibles', [ReservasController::class, 'getFranjasDisponibles'])->name('admin.reservas.getFranjasDisponibles')->middleware('auth');
 
-Route::get('/admin/pistas/mostrar', [PistasController::class, 'index'])->name('admin.pistas.mostrar')->middleware(['auth', 'is_admin']);
-Route::get('/admin/pistas/{id}', [PistasController::class, 'show'])->name('admin.pistas.detalle')->middleware(['auth', 'is_admin']);
-Route::get('/admin/pistas/{pista}/editar', [PistasController::class, 'edit'])->name('admin.pistas.editar')->middleware(['auth', 'is_admin']);
-Route::put('/admin/pistas/{pista}', [PistasController::class, 'update'])->name('admin.pistas.actualizar')->middleware(['auth', 'is_admin']);
+Route::get('/admin/pistas/mostrar', [PistasController::class, 'index'])->name('admin.pistas.mostrar')->middleware('auth');
+Route::get('/admin/pistas/{id}', [PistasController::class, 'show'])->name('admin.pistas.detalle')->middleware('auth');
+Route::get('/admin/pistas/{pista}/editar', [PistasController::class, 'edit'])->name('admin.pistas.editar')->middleware('auth');
+Route::put('/admin/pistas/{pista}', [PistasController::class, 'update'])->name('admin.pistas.actualizar')->middleware('auth');
 
 Route::get('/', function () {
     return redirect()->route('guest.index');
