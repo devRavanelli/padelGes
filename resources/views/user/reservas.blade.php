@@ -9,6 +9,7 @@
 @section('content')
 
 <div class="pistas-container">
+    <p>PAQUITOOOO</p>
     @foreach ($pistas as $pista)
     <a href="{{ route('user.calendario', $pista->id) }}" class="pista-link">
             <div class="pista-card">
