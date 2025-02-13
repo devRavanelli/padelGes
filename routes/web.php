@@ -12,7 +12,7 @@ use App\Http\Controllers\PistasController;
 use App\Http\Middleware\IsAdmin;
 
 // Ruta para mostrar todos los usuarios en el panel de administración
-Route::get('/admin/usuarios/mostrar', [UsuariosController::class, 'index'])->name('admin.usuarios.mostrar')->middleware(['auth', 'IsAdmin']);
+Route::get('/admin/usuarios/mostrar', [UsuariosController::class, 'index'])->name('admin.usuarios.mostrar')->middleware(['auth', 'is_admin']);
 Route::get('/admin/usuarios/crear', [UsuariosController::class, 'create'])->name('admin.usuarios.crear')->middleware('auth');
 Route::post('/admin/usuarios/crear', [UsuariosController::class, 'store'])->name('admin.usuarios.store')->middleware('auth');
 Route::get('/admin/settings', [SettingsController::class, 'index'])->name('admin.settings')->middleware('auth');
