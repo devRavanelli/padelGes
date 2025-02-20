@@ -123,9 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'routeMiddleware' => [
-        // Otros middlewares...
-        'is_admin' => \App\Http\Middleware\IsAdmin::class,
-    ],
+
 
 ];
